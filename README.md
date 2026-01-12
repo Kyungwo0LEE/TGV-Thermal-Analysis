@@ -1,5 +1,5 @@
 # Thermal and Thermo-Mechanical Analysis of TGV Glass Substrate
-ANSYS-based thermal analysis of Through-Glass Via (TGV) glass substrates with a focus on mesh strategy and parametric studies.
+ANSYS-based thermal analysis of Through-Glass Via (TGV) glass substrates with a focus on mesh strategy, mesh convergence and parametric studies.
 
 ## Overview
 This repository documents a two-month undergraduate research project focused on the thermal and thermo-mechanical behavior of Through-Glass Via (TGV) glass substrates with redundant via structures.
@@ -30,6 +30,7 @@ The objectives of this study are:
 - Calculation of effective thermal conductivity (k_eff) for each configuration
 - Sequential thermo-mechanical analysis using thermal results as input
 - Identification of hotspot regions and maximum von Mises stress locations
+- Mesh convergence verification based on the maximum temperature to ensure mesh-independent thermal results prior to parametric and stress analyses
 
 ## Tools & Environment
 - ANSYS Workbench / Mechanical
@@ -54,8 +55,13 @@ redundant TGV configurations on thermal performance and structural stability.
   - `temperature_distribution/`
   - `effective_conductivity/`
   - `thermal_stress/`
+- `python/`
+  - `mesh_convergence/` : Python scripts for mesh convergence analysis and nonlinear regression of maximum temperature
+- `data/`
+  - `mesh_convergence/` : Processed mesh convergence datasets (CSV)
+- `figures/`
+  - `mesh_convergence/` : Final and archived mesh convergence figures
 - `docs/` : Research notes and literature review
-- `logbook/` : Weekly research records
 
 ## Expected Contributions
 - Quantitative evaluation of the trade-off between thermal performance
@@ -67,10 +73,11 @@ redundant TGV configurations on thermal performance and structural stability.
 
 ## Reproducibility
 
-Mesh convergence analysis was performed using Python scripts
-located in `python/mesh_convergence`.
-The resulting numerical data were automatically generated
-and stored as CSV files in `data/mesh_convergence`.
+Mesh convergence analysis was performed using Python scripts located in `python/mesh_convergence`.
+The analysis includes nonlinear regression of the maximum temperature to verify mesh independence.
+
+The resulting numerical data and regression parameters are automatically generated and stored as CSV files in `data/mesh_convergence`,
+ensuring reproducibility of the results.
 
 
 ## Author
