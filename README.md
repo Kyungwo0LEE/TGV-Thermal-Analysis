@@ -31,6 +31,8 @@ The objectives of this study are:
 - Sequential thermo-mechanical analysis using thermal results as input
 - Identification of hotspot regions and maximum von Mises stress locations
 - Mesh convergence verification based on the maximum temperature to ensure mesh-independent thermal results prior to parametric and stress analyses
+- Mesh optimization based on convergence results by locally refining the mesh near the Cu–glass interface, where steep temperature gradients werㄷ observed
+- Adjustment of refinement level and transition settings to obtain a conservative and numerically stable estimate of the maximum temperature
 
 ## Tools & Environment
 - ANSYS Workbench / Mechanical
