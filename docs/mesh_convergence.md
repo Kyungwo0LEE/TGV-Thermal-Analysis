@@ -5,7 +5,7 @@ The following figures show the convergence behavior of the maximum
 temperature with mesh refinement.
 
 ### Mesh convergence of Tmax
-![Mesh convergence (Tmax)](figures/mesh_convergence/mesh_convergence_Tmax.png)
+![Mesh convergence (Tmax)](../figures/mesh_convergence/mesh_convergence_Tmax.png)
 
 ### Relative change between successive mesh refinements
-![Relative change of Tmax](figures/mesh_convergence/mesh_convergence_relative_change.png)
+![Relative change of Tmax](../figures/mesh_convergence/mesh_convergence_relative_change.png)
