@@ -7,3 +7,14 @@ The geometry consists of a single copper through-glass via (TGV) embedded in a g
 - Units: millimeters (mm)
 
 This geometry was used for transient thermal–structural coupling analysis to evaluate thermally induced interfacial stresses and Mode I crack risk.
+
+## Geometry Preview
+
+### Overview
+![overview](1via_overview.png)
+
+### Cross-section
+![section](1via_cross_section.png)
+
+### Dimensions
+![measure](1via_measure.png)
