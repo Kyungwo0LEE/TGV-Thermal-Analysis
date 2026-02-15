@@ -106,7 +106,44 @@ This controlled simplification enables direct comparison of redundancy density e
 
 ---
 
-## 6. Mesh Strategy
+## 6. Material Properties
+
+Material properties used in the coupled thermal–structural analysis are summarized below.
+
+All materials were assumed to be isotropic and temperature-independent.
+
+---
+
+### Glass Substrate
+
+- Density: 2230 kg/m³
+- Young’s Modulus: 64 GPa
+- Poisson’s Ratio: 0.20
+- Thermal Conductivity: 1.2 W/m·K
+- Coefficient of Thermal Expansion (CTE): 3.3 × 10⁻⁶ /K
+- Specific Heat Capacity: 830 J/kg·K
+
+---
+
+### Copper Via
+
+- Density: 8300 kg/m³
+- Young’s Modulus: 110 GPa
+- Poisson’s Ratio: 0.34
+- Thermal Conductivity: 401 W/m·K
+- Coefficient of Thermal Expansion (CTE): 1.8 × 10⁻⁵ /K
+- Specific Heat Capacity: 385 J/kg·K
+
+---
+
+### Thermo-Mechanical Mismatch
+
+The significant mismatch in CTE between copper (1.8 × 10⁻⁵ /K) and glass (3.3 × 10⁻⁶ /K) leads to thermal expansion incompatibility under heating.
+
+This mismatch is the primary driver of tensile principal stress at the via–glass interface and plays a critical role in crack initiation risk.
+
+
+## 7. Mesh Strategy
 
 To ensure accurate stress prediction near critical interfaces, a structured mesh strategy was adopted.
 
@@ -136,7 +173,7 @@ Final mesh density was selected based on stress convergence stability rather tha
 
 ---
 
-## 7. Boundary Conditions
+## 8. Boundary Conditions
 
 - Volumetric heat generation applied only to copper vias
 - Convection boundary condition applied to external surfaces
@@ -147,7 +184,7 @@ This ensures that performance differences arise solely from redundancy density v
 
 ---
 
-## 8. Engineering Insight
+## 9. Engineering Insight
 
 Because all vias are confined within the same 0.08 mm diameter region, increasing via count increases redundancy density rather than expanding thermal footprint.
 
@@ -164,7 +201,7 @@ The 2-via configuration provides the most balanced redundancy density under spat
 
 ---
 
-## 9. Significance
+## 10. Significance
 
 This study demonstrates that optimal via redundancy must be evaluated under spatial confinement constraints.
 
@@ -174,9 +211,9 @@ in advanced glass interposer systems.
 
 ---
 
-## 10. Results – Thermal and Structural Response
+## 11. Results – Thermal and Structural Response
 
-### 10.1 Maximum Temperature
+### 11.1 Maximum Temperature
 
 | Via Count | Maximum Temperature (°C) |
 |------------|--------------------------|
@@ -197,7 +234,7 @@ This indicates that thermal interaction between adjacent vias begins to dominate
 
 ---
 
-### 10.2 Maximum Principal Stress
+### 11.2 Maximum Principal Stress
 
 | Via Count | Maximum Principal Stress (MPa) |
 |------------|--------------------------------|
@@ -215,7 +252,7 @@ Maximum principal stress was used as the primary evaluation metric, since glass 
 
 ---
 
-### 10.3 Observed Trend
+### 11.3 Observed Trend
 
 The results reveal a non-monotonic behavior:
 
@@ -234,7 +271,7 @@ The 2-via configuration demonstrates the most favorable balance between thermal 
 
 ---
 
-### 10.4 Engineering Interpretation
+### 11.4 Engineering Interpretation
 
 Although redundancy initially improves heat distribution, excessive via clustering within a fixed footprint leads to:
 
@@ -248,7 +285,7 @@ Under the imposed 0.08 mm spatial constraint, the dual-via configuration represe
 
 ---
 
-### 10.5 Confinement-Induced Thermal Bottleneck
+### 11.5 Confinement-Induced Thermal Bottleneck
 
 The increase in temperature and maximum principal stress beyond the dual-via configuration suggests the emergence of a confinement-induced thermal bottleneck.
 
