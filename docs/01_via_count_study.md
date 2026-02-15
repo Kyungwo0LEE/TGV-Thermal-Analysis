@@ -1,5 +1,5 @@
 # Phase 1 – Spatially Confined Via Redundancy Optimization
-(Literature-Grounded Electro-Thermal Modeling)
+(Literature-Grounded Electro-Thermal Modeling Under 1 W RF Excitation)
 
 ---
 
@@ -7,31 +7,32 @@
 
 This phase investigates thermo-mechanical stability of a glass interposer with varying numbers of copper Through-Glass Vias (TGVs) under 1 W RF excitation conditions.
 
-The study aims to determine the optimal via redundancy within a spatially confined region that minimizes thermally induced stress.
+The objective is to determine the optimal via redundancy within a spatially confined footprint that minimizes thermally induced stress.
 
-Unlike conventional redundancy expansion approaches, all vias are restricted within a fixed circular footprint.
+Unlike conventional redundancy expansion approaches, all vias are restricted within a fixed circular region, allowing controlled evaluation of redundancy density effects.
 
 ---
 
-## 2. Key Geometric Constraint (Primary Differentiator)
+## 2. Spatial Confinement Constraint (Primary Differentiator)
 
 All via configurations (1–5 vias) satisfy:
 
 - Every via lies inside a circular region of 0.08 mm diameter
 - The circle is centered at the origin (0, 0)
 - Via diameter: 0.02 mm
-- Substrate dimensions: 0.4 mm × 0.4 mm × 0.2 mm
+- Glass substrate: 0.4 mm × 0.4 mm × 0.2 mm
+- Units: millimeters (mm)
 
 Increasing via count does NOT increase occupied footprint.
 Instead, it increases redundancy density within the same confined region.
 
-This isolates density-driven thermal interaction effects rather than footprint expansion effects.
+This isolates density-driven thermal interaction and mechanical constraint amplification effects, rather than footprint expansion effects.
 
 ---
 
 ## 3. Literature-Based Heat Source Derivation (1 W Condition)
 
-The heat source applied in this study is derived from:
+Heat source values were derived from:
 
 L. Chen et al.,
 “Electro-thermal Co-Design and Verification of TGV Transmission Structures for High-Power High-Frequency Applications,” TechRxiv, 2025.
@@ -94,45 +95,79 @@ These volumetric heat sources were applied uniformly within each copper via.
 
 This model assumes:
 
-- The RF input power is 1 W (as reported in literature)
-- The reported interface heat flux corresponds to total EM-to-thermal loss
-- All dissipated power is converted into heat inside copper vias
-- Heat generation is uniformly distributed within the via volume
-- Radiation and secondary loss mechanisms are not explicitly modeled
+- RF excitation = 1 W (as reported in literature)
+- Reported interface heat flux represents EM-to-thermal conversion
+- Dissipated power is fully converted into heat inside copper vias
+- Heat generation is uniformly distributed within each via
+- Radiation and secondary EM losses are not explicitly modeled
 - Higher-order electro-thermal coupling effects are neglected
 
-This simplified approach enables controlled comparison of redundancy density effects under identical power conditions.
+This controlled simplification enables direct comparison of redundancy density effects under identical excitation conditions.
 
 ---
 
-## 6. Boundary Conditions
+## 6. Mesh Strategy
 
-- Volumetric heat generation applied to copper vias only
+To ensure accurate stress prediction near critical interfaces, a structured mesh strategy was adopted.
+
+### Local Refinement
+
+- Fine mesh applied at copper–glass interfaces
+- Increased mesh density within the 0.08 mm confined region
+- Gradual mesh coarsening away from the via cluster
+
+### Convergence Validation
+
+Mesh independence was verified through:
+
+- Element size variation study
+- Monitoring maximum principal stress convergence
+- Ensuring peak stress stabilization
+
+Convergence data is available in:
+
+data/mesh_convergence/
+
+Mesh screenshots for each configuration are stored in:
+
+ansys/mesh/
+
+Final mesh density was selected based on stress convergence stability rather than temperature alone.
+
+---
+
+## 7. Boundary Conditions
+
+- Volumetric heat generation applied only to copper vias
 - Convection boundary condition applied to external surfaces
 - Coupled thermal–structural analysis performed
-- Identical conditions used for all via counts
+- Identical boundary conditions used for all via counts
+
+This ensures that performance differences arise solely from redundancy density variations.
 
 ---
 
-## 7. Engineering Insight
+## 8. Engineering Insight
 
-Because all vias are confined within the same 0.08 mm diameter region, increasing via count increases redundancy density, not footprint size.
+Because all vias are confined within the same 0.08 mm diameter region, increasing via count increases redundancy density rather than expanding thermal footprint.
 
-The literature-reported heat flux shows exponential saturation beyond N = 2.
+Literature data shows exponential saturation of interface heat flux beyond N = 2.
 
-This suggests:
+This indicates:
 
-- Thermal interaction between adjacent vias increases
-- Localized heat concentration saturates
-- Mechanical constraint within glass amplifies
-- Excessive redundancy does not linearly reduce stress
+- Strong thermal interaction between adjacent vias
+- Local heat concentration saturation
+- Mechanical constraint amplification in glass
+- Non-monotonic stress reduction behavior
 
-The 2-via configuration represents the most balanced redundancy density under spatial confinement.
+The 2-via configuration provides the most balanced redundancy density under spatial confinement.
 
 ---
 
-## 8. Significance
+## 9. Significance
 
-This study demonstrates that optimal via redundancy must be evaluated under spatial confinement and density effects, not merely increased via count.
+This study demonstrates that optimal via redundancy must be evaluated under spatial confinement constraints.
 
-The approach provides a controlled, literature-grounded electro-thermal model for evaluating TGV clustering behavior in advanced glass interposer systems.
+It provides a literature-grounded, controlled electro-thermal modeling framework
+for analyzing clustered TGV architectures
+in advanced glass interposer systems.
