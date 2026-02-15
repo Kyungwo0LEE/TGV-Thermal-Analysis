@@ -144,6 +144,27 @@ Final mesh density was selected based on stress convergence stability rather tha
 - Identical boundary conditions used for all via counts
 
 This ensures that performance differences arise solely from redundancy density variations.
+---
+
+## Material Consideration
+
+The thermo-mechanical response in this study is strongly influenced by the material mismatch between copper vias and the glass substrate.
+
+Copper exhibits:
+
+- High thermal conductivity
+- High coefficient of thermal expansion (CTE)
+
+Glass exhibits:
+
+- Low thermal conductivity
+- Low CTE
+- Brittle mechanical behavior
+
+The significant CTE mismatch between copper and glass induces tensile principal stress at the via–glass interface under thermal loading.
+
+Detailed material properties are provided in:
+docs/material_properties.md
 
 ---
 
