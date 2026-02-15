@@ -171,3 +171,97 @@ This study demonstrates that optimal via redundancy must be evaluated under spat
 It provides a literature-grounded, controlled electro-thermal modeling framework
 for analyzing clustered TGV architectures
 in advanced glass interposer systems.
+
+---
+
+## 10. Results – Thermal and Structural Response
+
+### 10.1 Maximum Temperature
+
+| Via Count | Maximum Temperature (°C) |
+|------------|--------------------------|
+| 1 | 30.821 |
+| 2 | 28.687 |
+| 3 | 30.738 |
+| 4 | 33.097 |
+| 5 | 36.890 |
+
+Temperature contour images are available in:
+
+figures/phase1_temperature/
+
+The temperature decreases when increasing redundancy from 1 to 2 vias.
+However, beyond 2 vias, temperature rises again as via density increases within the confined 0.08 mm region.
+
+This indicates that thermal interaction between adjacent vias begins to dominate beyond the dual configuration.
+
+---
+
+### 10.2 Maximum Principal Stress
+
+| Via Count | Maximum Principal Stress (MPa) |
+|------------|--------------------------------|
+| 1 | 19.488 |
+| 2 | 16.351 |
+| 3 | 22.930 |
+| 4 | 35.609 |
+| 5 | 44.922 |
+
+Stress contour images are available in:
+
+figures/phase1_max_principal_stress/
+
+Maximum principal stress was used as the primary evaluation metric, since glass is a brittle material and crack initiation is governed by tensile principal stress rather than von Mises equivalent stress.
+
+---
+
+### 10.3 Observed Trend
+
+The results reveal a non-monotonic behavior:
+
+- Increasing via count from 1 to 2 reduces both temperature and stress.
+- Beyond 2 vias, both temperature and principal stress increase significantly.
+- At 5 vias, principal stress increases by approximately 175% compared to 2 vias.
+
+This behavior is attributed to:
+
+- Increased redundancy density within the confined region
+- Strong thermal interaction between closely spaced vias
+- Mechanical constraint amplification in the glass substrate
+- Localized stress concentration at via–glass interfaces
+
+The 2-via configuration demonstrates the most favorable balance between thermal reduction and mechanical reliability under spatial confinement.
+
+---
+
+### 10.4 Engineering Interpretation
+
+Although redundancy initially improves heat distribution, excessive via clustering within a fixed footprint leads to:
+
+- Heat flux saturation
+- Localized thermal accumulation
+- Increased tensile stress in brittle glass
+
+Therefore, optimal redundancy must consider density effects rather than simply increasing via count.
+
+Under the imposed 0.08 mm spatial constraint, the dual-via configuration represents the optimal electro-thermal–mechanical balance.
+
+---
+
+### 10.5 Confinement-Induced Thermal Bottleneck
+
+The increase in temperature and maximum principal stress beyond the dual-via configuration suggests the emergence of a confinement-induced thermal bottleneck.
+
+Because all vias are restricted within the same 0.08 mm diameter region, increasing via count does not expand the heat dissipation footprint.
+Instead, it increases redundancy density within a fixed thermal pathway.
+
+As via density increases:
+
+- Heat spreading inside the glass becomes spatially constrained
+- Local thermal interaction between adjacent vias intensifies
+- Effective heat dissipation paths become relatively limited
+- Tensile principal stress in the brittle glass substrate is amplified
+
+This behavior indicates that excessive redundancy within a confined footprint may degrade structural reliability despite initial improvements in heat distribution.
+
+Therefore, optimal via redundancy must consider density-driven thermal bottleneck effects rather than simply increasing the number of vias.
